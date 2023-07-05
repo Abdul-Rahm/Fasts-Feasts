@@ -29,9 +29,9 @@ const DBHeader = () => {
   return (
     <div className='w-full flex items-center justify-between gap-3'>
         <p className='text-xl text-headingColor'>
-            Hey there!👋 Welcome to our store.What can we help you with today...
+            Hey there!👋
             {user?.name && (
-                <span className='block text-2xl font-bold text-red-400'>{`${user?.name}`}</span>
+                <span className='block text-2xl font-bold text-red-400'>{`${user?.name}`}....</span>
             )}
         </p>
 
