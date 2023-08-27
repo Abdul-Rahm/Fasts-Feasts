@@ -59,7 +59,7 @@ const Login = () => {
         setuserEmail("");
         setconfirm_password("");
         setpassword("");
-        await createUserWithEmailAndPassword(firebaseAuth, userEmail, password).then(userCred => {
+        await createUserWithEmailAndPassword(firebaseAuth, userEmail, password).then((userCred) => {
           firebaseAuth.onAuthStateChanged((cred) => {
             if (cred) {
               cred.getIdToken().then((token) => {
@@ -70,11 +70,10 @@ const Login = () => {
               });
             } 
           });  
-        }) 
+        });
         
-      }else {
+      } else {
         dispatch(alertWarning("Password doesn't match"));
-
       }
     }
   };
@@ -103,12 +102,12 @@ const Login = () => {
   return (
     <div className='w-screen h-screen relative overflow-hidden flex'>
       {/* background image */}
-      <img src={ LoginPic } className='w-full h-full object-cover absolute top-0  left-0'
+      <img src={ LoginPic } className='w-full h-full object-cover absolute top-0 left-0'
         alt=''
       /> 
 
       {/* content box */}
-      <div className="flex flex-col items-center bg-cardOverlay w-[80%] md:w-508 h-full    z-10 backdrop-blur-md p-4 px-4 gap-6 ">
+      <div className="flex flex-col items-center bg-cardOverlay w-[80%] md:w-508 h-full z-10 backdrop-blur-md p-4 px-4 gap-6 ">
         
         {/* Top logo section */}
         <div className='flex items-center justify-start gap-4 w-full'>
@@ -200,4 +199,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Login;
